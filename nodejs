@@ -1,0 +1,57 @@
+mk dir prueba
+cd prueba
+npm init
+
+enter a todo
+yes
+
+npm install express --save
+
+definir el e`puerto
+const express = require('express')
+const app = express()
+const port = 3000
+
+
+
+desde app
+
+const express = require('express')
+const app = express()
+const port = 3000
+
+const cursos = require ('./curso');
+app.use('/curso', cursos)
+
+
+const profesores = require ('./profesores');
+app.use('/profesores', profesores)
+
+app.listen(port,() => {
+    console.log('Ingresa a localhost:3000')
+})
+
+
+
+
+desde el archivo 
+
+
+const express = require('express')
+const router = express.Router()
+
+router.get('/listado',(req, res) => {
+    res.send('listado de profesores!')
+})
+
+router.post('/registrar',(req, res) => {
+    res.send('registrar profesores')
+})
+
+module.exports = router
+
+
+
+
+
+
